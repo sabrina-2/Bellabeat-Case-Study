@@ -55,7 +55,6 @@ https://www.pewresearch.org/internet/fact-sheet/social-media/
 
 - dailyActivity_merged.csv
 - dailyCalories_merged.csv
-- dailyIntensities_merged.csv
 - dailySteps_merged.csv
 - sleepDay_merged.csv
 - weightLogInfo_merged.csv
@@ -64,4 +63,19 @@ https://www.pewresearch.org/internet/fact-sheet/social-media/
 
 All the csv files were cleaned using Microsoft Excel. I looked for null values in the rows. I also split the date time column into two separate column, one for data in the short date format and one for time.
 
-I then loaded the data in Google BigQuery after which I proceeded to use SQL for analysis (https://github.com/sabrina-2/Bellabeat-Case-Study/commit/14c1fcb3b1db6f3eee45cce551383d11cb6c3258#diff-81d541158fc2dc58e1fe553db03fa8b43abaebd29284f94b1d63bc5c06b2f6a4)
+I then loaded the data in Google BigQuery after which I proceeded to use SQL for analysis ( Present in SQL code)   
+The following steps were taken:    
+1- I viewed all the data present to make sure all the data was imported correctly    
+2- I checked the number of distinct id in each csv file. Results:
+       -dailyActivity : 33      
+       -dailyCalories : 33        
+       -dailySteps : 33       
+       -sleepDay : 24      
+       -weightLog : 8         
+This shows that the data is inconsistent as we are told that there are 30 participants. Some data has more entries while some have missing data.    
+3- I then checked the average stat for the data.      
+       - Average Daily Steps : 7638 steps. CDC recommends 10000 steps a day so that mark is not reached          
+       - Average Active Minutes : 227.52 minutes out of which 21.16 minutes has very active activity. CDC recommends 75 minutes of vigorous activity a week so users                                   are reaching that goal.       
+       -Average Calories burned : 2304 calories. 3500 calories are required to burn to lose 1 pound of weight 
+       -Average Sleep Hours : Roughly 7 hours. This value is within CDC recommendation      
+       -Avergae BMI - 25.19 which falls under the overweight category.    
