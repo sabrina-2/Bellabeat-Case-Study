@@ -51,3 +51,17 @@ https://www.today.com/money/smartwatch-or-fitness-tracker-why-age-sex-matter-1d8
 -Social media usage:     
 https://www.pewresearch.org/internet/fact-sheet/social-media/
 
+<ins>Data used from Fitbit Dataset</ins>
+
+- dailyActivity_merged.csv
+- dailyCalories_merged.csv
+- dailyIntensities_merged.csv
+- dailySteps_merged.csv
+- sleepDay_merged.csv
+- weightLogInfo_merged.csv
+
+<ins>Processing Data</ins>
+
+All the csv files were cleaned using Microsoft Excel. I looked for null values in the rows. I also split the date time column into two separate column, one for data in the short date format and one for time.
+
+I then loaded the data in Google BigQuery after which I proceeded to use SQL for analysis (https://github.com/sabrina-2/Bellabeat-Case-Study/commit/14c1fcb3b1db6f3eee45cce551383d11cb6c3258#diff-81d541158fc2dc58e1fe553db03fa8b43abaebd29284f94b1d63bc5c06b2f6a4)
