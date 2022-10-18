@@ -65,7 +65,8 @@ All the csv files were cleaned using Microsoft Excel. I looked for null values i
 
 I then loaded the data in Google BigQuery after which I proceeded to use SQL for analysis ( Present in SQL code)   
 The following steps were taken:    
-1- I viewed all the data present to make sure all the data was imported correctly    
+1- I viewed all the data present to make sure all the data was imported correctly   
+
 2- I checked the number of distinct id in each csv file. Results:
        -dailyActivity : 33      
        -dailyCalories : 33        
@@ -73,9 +74,36 @@ The following steps were taken:
        -sleepDay : 24      
        -weightLog : 8         
 This shows that the data is inconsistent as we are told that there are 30 participants. Some data has more entries while some have missing data.    
+
 3- I then checked the average stat for the data.      
        - Average Daily Steps : 7638 steps. CDC recommends 10000 steps a day so that mark is not reached          
        - Average Active Minutes : 227.52 minutes out of which 21.16 minutes has very active activity. CDC recommends 75 minutes of vigorous activity a week so users                                   are reaching that goal.       
        -Average Calories burned : 2304 calories. 3500 calories are required to burn to lose 1 pound of weight 
        -Average Sleep Hours : Roughly 7 hours. This value is within CDC recommendation      
        -Avergae BMI - 25.19 which falls under the overweight category.    
+
+4- I then proceeded to find the relationships between different data and visualized the results using tableau.           
+- Relationship between Average Activity and Average Calories burned : There is a positive correlation between average activity and the average calories burned.
+       
+![Dashboard 1 (1)](https://user-images.githubusercontent.com/101150323/196565554-42679b84-008a-4934-9d8e-c062a8aa3da7.png)
+       
+      
+      
+      
+- Relationship between Average Steps and Average Calories burned: There is a positive correlation between average steps and average calories burned.
+       
+![Dashboard 1 (2)](https://user-images.githubusercontent.com/101150323/196565882-f104e9da-fcd2-46c2-9d87-1cfd08396213.png)
+
+
+
+- Relationship between Average Activity and Total Hours of Sleep : No correlation
+
+![Dashboard 1 (3)](https://user-images.githubusercontent.com/101150323/196566117-804bd7b7-828e-4d20-a094-60f4a4c5135c.png)
+
+
+
+- Relationship between Average Activity and BMI (Not reliable due to small dataset) : Negative correlation between Average Activity and BMI
+
+![Dashboard 2](https://user-images.githubusercontent.com/101150323/196566223-d34cf83a-a4e0-4d52-b12f-1e8b0f4421a3.png)
+
+
