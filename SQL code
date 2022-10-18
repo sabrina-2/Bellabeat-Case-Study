@@ -44,7 +44,7 @@ FROM Fitbit.weightLog
 
 SELECT
   AVG(TotalSteps) as AvgSteps,
-  AVG(SedentaryMinutes) as AvgSedentaryMinutes,
+  AVG(VeryActiveMinutes) as AvgVeryActiveMinutes
   (AVG(LightlyActiveMinutes) + AVG(FairlyActiveMinutes) + AVG(VeryActiveMinutes)) as AvgActiveMinutes,
   AVG(Calories) as AvgCalories
 FROM
