@@ -1,0 +1,126 @@
+#PREVIEW THE DATA TO BE USED
+
+
+SELECT *
+FROM Fitbit.dailyActivity
+
+SELECT *
+FROM Fitbit.dailyCalories
+
+SELECT *
+FROM Fitbit.dailyIntensities
+
+SELECT *
+FROM Fitbit.dailySteps
+
+SELECT *
+FROM Fitbit.sleepDay
+
+
+#To check the number of participants
+
+
+SELECT distinct Id 
+FROM Fitbit.dailyActivity
+
+SELECT distinct Id 
+FROM Fitbit.dailyCalories
+
+SELECT distinct Id 
+FROM Fitbit.dailyIntensities
+
+SELECT distinct Id 
+FROM Fitbit.dailySteps
+
+SELECT distinct Id 
+FROM Fitbit.sleepDay
+
+SELECT distinct Id 
+FROM Fitbit.weightLog
+
+
+#CHECK AVERAGE STATS FOR EVERYTHING
+
+
+SELECT
+  AVG(TotalSteps) as AvgSteps,
+  AVG(SedentaryMinutes) as AvgSedentaryMinutes,
+  (AVG(LightlyActiveMinutes) + AVG(FairlyActiveMinutes) + AVG(VeryActiveMinutes)) as AvgActiveMinutes,
+  AVG(Calories) as AvgCalories
+FROM
+  Fitbit.dailyActivity
+  
+SELECT
+  AVG(TotalMinutesAsleep)/60 as AvgSleepHours
+FROM
+  Fitbit.sleepDay
+
+SELECT
+  AVG(BMI) as AvgBMI
+FROM
+  Fitbit.weightLog
+  
+ 
+#RELATIONSHIP BETWEEN AVERAGE ACTIVITY AND AVERAGE CALORIES BURNED
+
+
+SELECT
+  Id,
+  ActivityDate,
+  (LightlyActiveMinutes + FairlyActiveMinutes + VeryActiveMinutes) AS ActiveMinutes,
+  Calories 
+FROM
+  Fitbit.dailyActivity
+ORDER BY 
+  3
+  
+  
+#RELATIONSHIP BETWEEN AVERAGE STEPS AND AVERAGE CALORIES BURNED
+
+
+SELECT
+  Id,
+  ActivityDate,
+  TotalSteps,
+  Calories 
+FROM
+  Fitbit.dailyActivity
+ORDER BY 
+  3
+  
+
+#RELATIONSHIP  BETWEEN AVERAGE ACTIVITY AND HOURS OF SLEEP
+
+
+SELECT
+  Activity.Id,
+  Activity.ActivityDate,
+  (LightlyActiveMinutes + FairlyActiveMinutes + VeryActiveMinutes) AS ActiveMinutes,
+  Sleep.TotalMinutesAsleep/60 as SleepHours
+FROM
+  Fitbit.dailyActivity as Activity
+JOIN
+  Fitbit.sleepDay as Sleep
+ON 
+  activity.Id = Sleep.Id
+ORDER BY
+  1,2
+  
+
+#RELATIONSHIP BETWEEN AVERAGE ACTIVITY AND BMI
+
+
+SELECT
+  Activity.Id,
+  (AVG(LightlyActiveMinutes) + AVG(FairlyActiveMinutes) + AVG(VeryActiveMinutes)) AS ActiveMinutes,
+  AVG(BMI) as AvgBMI
+FROM 
+  Fitbit.dailyActivity as Activity
+JOIN
+  Fitbit.weightLog as Weight
+ON 
+  Activity.Id = Weight.Id
+GROUP BY
+  Activity.Id
+ORDER BY
+  ActiveMinutes
