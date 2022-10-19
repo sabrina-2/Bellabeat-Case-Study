@@ -107,3 +107,22 @@ This shows that the data is inconsistent as we are told that there are 30 partic
 ![Dashboard 2](https://user-images.githubusercontent.com/101150323/196566223-d34cf83a-a4e0-4d52-b12f-1e8b0f4421a3.png)
 
 
+
+Other data insights: According to a new report by market research firm NPD Group, 36 percent of people who own fitness trackers in the U.S. are 35 to 54 years old and are predominantly women. Social media platforms used mostly by people in this demographic are Youtube and Facebook. 
+
+
+<ins>Final conclusions</ins>
+
+-Bellabeat should concentrate more of their online marketing towards Youtube and Facebook as majority of women who own a fitness device are on that platform.   
+-Currently, Bellabeat app provides data on a user's health. A new feature should be added which will encourage users to reach the health levels as recommended by the CDC.        
+If a user has below 10000 steps, they should be notified and recommended to reach that level           
+If a user has below 7 hours of sleep, they should be notified and recommended to reach that level                         
+If a user has below 75 minutes of vigorous activity a week, they should be notified and recommended to reach that level           
+A section can be created for personal goals and Bellabeat can encourage them to reach that goal. For instance, if someone wants to lose 10 pounds, the calories needed to burn everyday to lose that weight in a healthy manner can be added as a metric to the app. From our data, we know that more steps and activity levels can help in burning more calories. This info can then be used to add a metric for recommended steps and activity level required to lose weight.           
+-BMI tracker should be added for Bellabeat app.         
+-A 30 day free trial subscription should be added for Bellabeat membership.        
+-Discounted rates should be provided for Bellabeat products for people who refer the products to someone else. This will encourage the users to market the products to other people        
+-Offer a package deal with discounts when a user purchases multiple Bellabeat product
+
+
+
